@@ -13,17 +13,21 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
-    @FXML
-    TextField nameBox;
+    public static String name;
+    public static String address;
+    public static int port;
 
     @FXML
-    TextField addressBox;
+    private TextField nameBox;
 
     @FXML
-    TextField portBox;
+    private TextField addressBox;
 
     @FXML
-    Button loginButton;
+    private TextField portBox;
+
+    @FXML
+    private Button loginButton;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -31,6 +35,10 @@ public class LoginController implements Initializable {
     }
 
     public void login() throws Exception {
+        name = nameBox.getText();
+        address = addressBox.getText();
+        port = Integer.parseInt(portBox.getText());
+
         Stage loginWindow = (Stage) loginButton.getScene().getWindow();
         loginWindow.close();
 
