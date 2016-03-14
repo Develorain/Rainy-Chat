@@ -21,7 +21,7 @@ public class ChatController implements Initializable {
     }
 
     public void sendMessage() {
-        messageLog.appendText(messageBox.getText());
+        messageLog.appendText("Username: " + messageBox.getText());
         messageBox.clear();
     }
 }
