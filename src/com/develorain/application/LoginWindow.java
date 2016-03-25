@@ -10,6 +10,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 
+import java.io.IOException;
+
 public class LoginWindow extends Application {
     @FXML
     private TextField nameBox;
@@ -20,25 +22,21 @@ public class LoginWindow extends Application {
     @FXML
     private Button loginButton;
 
-    public void loginButtonClicked() throws Exception {
+    @Override
+    public void start(Stage loginWindow) {
+        try {
+            Parent loginRoot = FXMLLoader.load(getClass().getResource("logingui.fxml"));
+            loginWindow.setTitle("Login");
+            loginWindow.setScene(new Scene(loginRoot));
+            loginWindow.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void loginButtonClicked() {
         hideLoginWindow();
         createChatWindow();
-    }
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-
-    @Override
-    public void start(Stage loginWindow) throws Exception {
-        initLoginWindow(loginWindow);
-    }
-
-    public void initLoginWindow(Stage loginWindow) throws Exception {
-        Parent loginRoot = FXMLLoader.load(getClass().getResource("logingui.fxml"));
-        loginWindow.setTitle("Login");
-        loginWindow.setScene(new Scene(loginRoot));
-        loginWindow.show();
     }
 
     public void hideLoginWindow() {
@@ -46,7 +44,7 @@ public class LoginWindow extends Application {
         loginWindow.hide();
     }
 
-    public void createChatWindow() throws Exception {
+    public void createChatWindow() {
         new ChatWindow();
     }
 }
