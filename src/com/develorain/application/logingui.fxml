@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="359.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.develorain.application.LoginController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="359.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.develorain.application.LoginWindow">
     <children>
         <TextField fx:id="nameBox" layoutX="90.0" layoutY="128.0" promptText="Name (ex. Develorain)" />
         <TextField fx:id="addressBox" layoutX="90.0" layoutY="189.0" promptText="Address (ex. 192.168.1.100)" />
@@ -20,6 +20,6 @@
         <Label layoutX="156.0" layoutY="113.0" text="Name" />
         <Label layoutX="140.0" layoutY="174.0" text="IP Address" />
         <Label layoutX="162.0" layoutY="236.0" text="Port" />
-        <Button fx:id="loginButton" layoutX="148.0" layoutY="308.0" mnemonicParsing="false" onAction="#login" text="Login" />
+        <Button fx:id="loginButton" layoutX="148.0" layoutY="308.0" mnemonicParsing="false" onAction="#loginButtonClicked" text="Login" />
     </children>
 </Pane>
