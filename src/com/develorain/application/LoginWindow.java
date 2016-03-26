@@ -45,6 +45,14 @@ public class LoginWindow extends Application {
     }
 
     public void createChatWindow() {
-        new ChatWindow();
+        try {
+            Parent chatRoot = FXMLLoader.load(getClass().getResource("chatgui.fxml"));
+            Stage chatWindow = new Stage();
+            chatWindow.setTitle("Rainy Chat");
+            chatWindow.setScene(new Scene(chatRoot));
+            chatWindow.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -4,7 +4,18 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="812.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.develorain.application.ChatWindow">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="509.0" prefWidth="819.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.develorain.application.ChatWindow">
+    <bottom>
+        <HBox BorderPane.alignment="CENTER">
+            <children>
+                <TextField fx:id="messageBox" onKeyPressed="#sendMessage" prefHeight="25.0" prefWidth="752.0" />
+                <Button fx:id="sendButton" mnemonicParsing="false" onAction="#sendMessage" text="Send" />
+            </children>
+        </HBox>
+    </bottom>
+    <center>
+        <TextArea fx:id="messageLog" editable="false" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+    </center>
     <top>
         <MenuBar BorderPane.alignment="CENTER">
             <menus>
@@ -26,15 +37,4 @@
             </menus>
         </MenuBar>
     </top>
-    <center>
-        <TextArea fx:id="messageLog" editable="false" BorderPane.alignment="CENTER" />
-    </center>
-    <bottom>
-        <HBox BorderPane.alignment="CENTER">
-            <children>
-                <TextField fx:id="messageBox" />
-                <Button mnemonicParsing="false" onAction="#sendMessage" text="Send" />
-            </children>
-        </HBox>
-    </bottom>
 </BorderPane>
